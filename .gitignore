@@ -1,0 +1,9 @@
+.vscode
+build/
+testcases/
+thirdparty/lemon*
+*.o
+*.out
+*.log
+*.tgz
+*.tar.gz
