@@ -143,7 +143,7 @@ if args.output != '':
             pin = pins[p]
             if arrival_time[pin[0]][pin[1]] == 1e9:
                 print('Error: pin {} is not connected to tap {}'.format(p, t))
-                # exit(0)
+                exit(0)
             min_time = min(min_time, arrival_time[pin[0]][pin[1]])
             max_time = max(max_time, arrival_time[pin[0]][pin[1]])
         tap_skew.append(max_time - min_time)
@@ -169,7 +169,7 @@ if args.output != '':
         else:
             high_end = (max_used_edge[1], max_used_edge[2] + 1)
         print('Error: grid edge {} to {} has exceeded the maximum capacity.'.format(low_end, high_end))
-        # exit(0)
+        exit(0)
     else:
         print('Passed: Capacity Check. (40)')
         score += 40

@@ -14,3 +14,13 @@ void Grid::initGrid(int nGridSize, int nEdgeCap) {
 
     fInit = true;
 }
+
+void Grid::freeGrid() {
+    if (fInit) {
+        delete [] vCellTrees;
+        delete [] vHorEdgeRes;
+        delete [] vVerEdgeRes;
+        delete [] vVisited;
+        fInit = false;
+    }
+}

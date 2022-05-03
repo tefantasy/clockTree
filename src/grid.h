@@ -6,16 +6,10 @@
 class Grid {
 public:
     Grid() : fInit(false) {}
-    ~Grid() {
-        if (fInit) {
-            delete [] vCellTrees;
-            delete [] vHorEdgeRes;
-            delete [] vVerEdgeRes;
-            delete [] vVisited;
-        }
-    }
+    ~Grid() { freeGrid(); }
 
     void initGrid(int nGridSize, int nEdgeCap);
+    void freeGrid();
     int getEdgeRes(const Edge & e) {
         if (e.isHorizontal())
             return vHorEdgeRes[getHorEdgeIdx(e)];

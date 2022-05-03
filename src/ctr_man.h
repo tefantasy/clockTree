@@ -54,8 +54,9 @@ private:
         grid.initGrid(nGridSize, nEdgeCap);
     }
     void initFlute();
+    std::vector<Edge> bfsRoute(const Point & src, const Point & dst);
     void routeNet(int cluster);
-    void reRoute();
+    bool reRoute();
 
 
     int nMaxTime;
